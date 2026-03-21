@@ -1,0 +1,21 @@
+aid: coca-cola
+url: https://raw.githubusercontent.com/api-evangelist/coca-cola/refs/heads/main/apis.yml
+modified: '2026-03-21'
+apis:
+  - aid: coca-cola:coca-cola-api
+    name: Coca-Cola API
+    tags:
+      - Beverages
+      - Supply Chain
+      - Retail
+      - Distribution
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.coca-cola.com
+    humanURL: https://www.coca-colacompany.com/innovation
+    properties:
+      - url: https://www.coca-colacompany.com/innovation
+        type: Documentation
+      - url: openapi/coca-cola-coca-cola-api-openapi.yml
+        type: OpenAPI
+    description: >-
+      Coca-Cola provides partner APIs for supply chain integration, product information, and retail data exchange with bottling partners and distributors.
