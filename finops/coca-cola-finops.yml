@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -9,142 +10,62 @@ alignedWith:
 provider: The Coca-Cola Company
 providerId: coca-cola
 publisherName: The Coca-Cola Company
-serviceCategory: API
+serviceCategory: Consumer Goods Manufacturing
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
-  - Beverages
-  - Beverage Manufacturer
-  - Consumer Goods
-  - Distribution
-  - Retail
-  - Supply Chain
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the The Coca-Cola Company API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+  - Beverages
+  - Consumer Goods
+  - Supply Chain
+notes: The Coca-Cola Company is a beverage manufacturer, not a software vendor. There is no public API
+  price list; this artifact captures the structural FinOps shape of bilateral B2B / EDI integrations rather
+  than verified invoice line-items.
+description: 'FinOps placeholder for The Coca-Cola Company: no public API pricing surface, so meters and
+  FOCUS columns reflect the typical shape of a bottler / retailer / distributor B2B contract.'
+sources:
+  - https://www.coca-colacompany.com
 billingModel:
-  pricingCategory: Usage-Based
+  pricingCategory: Enterprise Contract
   billingFrequency: Monthly
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
     - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: The Coca-Cola Company
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Consumer Goods Manufacturing
   ProviderName: The Coca-Cola Company
   PublisherName: The Coca-Cola Company
-  InvoiceIssuerName: The Coca-Cola Company
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PricingCategory: Enterprise Contract
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: contract_subscription
+    description: Recurring partner integration / EDI subscription fee per the enterprise contract.
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - contract
+  - name: edi_documents
+    description: EDI documents exchanged with the bottler / retailer / distributor under the contract.
+    unit: document
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Coca-Cola Internal API Platform
-    baseURL: ''
-    tags:
-      - API Management
-      - Enterprise Integration
-      - Microservices
-      - MuleSoft
-    serviceName: Coca-Cola Internal API Platform
-    serviceCategory: API
-  - name: Coca-Cola Enterprises Product API (Legacy)
-    baseURL: ''
-    tags:
-      - Catalog
-      - Legacy
-      - Products
-    serviceName: Coca-Cola Enterprises Product API (Legacy)
-    serviceCategory: API
-  - name: Coca-Cola Enterprises Location API (Legacy)
-    baseURL: ''
-    tags:
-      - Geolocation
-      - Legacy
-      - Locations
-    serviceName: Coca-Cola Enterprises Location API (Legacy)
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - document_type
+      - partner
+principles:
+  - name: Visibility
+    description: Reconcile EDI / B2B traffic against the partner contract via the partner's reporting deliverables.
+  - name: Allocation
+    description: Allocate partner-integration costs to the consuming bottler-operations, retail-supply,
+      or distributor-operations team.
+  - name: Optimization
+    description: Right-size partner contract scope at each renewal; consolidate EDI document types across
+      partners where possible.
+  - name: Accountability
+    description: Assign a partner-integration owner accountable for renewal and utilization review.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
