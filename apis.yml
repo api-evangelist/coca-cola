@@ -128,6 +128,14 @@ common:
     url: https://www.coca-colacompany.com/policies-and-practices/privacy-policy
   - type: TermsOfService
     url: https://www.coca-colacompany.com/policies-and-practices/terms-of-use
+  - type: Integrations
+    url: https://www.coca-colacompany.com/apps
+integrations:
+  - name: The Coca-Cola Company
+  - name: Brands
+  - name: Media
+  - name: Mobile App
+  - name: The Coca Cola Company
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
