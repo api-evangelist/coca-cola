@@ -110,6 +110,10 @@ apis:
       - Field merchandising apps (historical)
       - Distribution territory visualization (historical)
 common:
+  - type: GitHubOrganization
+    url: https://github.com/The-Coca-Cola-Company
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/the-coca-cola-company
   - type: Website
     url: https://www.coca-colacompany.com/
   - type: Brands
