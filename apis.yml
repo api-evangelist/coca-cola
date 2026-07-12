@@ -110,6 +110,8 @@ apis:
       - Field merchandising apps (historical)
       - Distribution territory visualization (historical)
 common:
+  - type: DomainSecurity
+    url: security/coca-cola-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/The-Coca-Cola-Company
   - type: LinkedIn
