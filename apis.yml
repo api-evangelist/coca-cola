@@ -76,6 +76,10 @@ apis:
     tags:
       - Catalog
       - Legacy
+      - Product
+    tags_raw:
+      - Catalog
+      - Legacy
       - Products
     humanURL: http://developer.cokecce.com/docs/Product_API
     properties:
