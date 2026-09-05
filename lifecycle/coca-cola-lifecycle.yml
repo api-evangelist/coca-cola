@@ -1,0 +1,83 @@
+specification: API Commons Lifecycle
+specificationVersion: '0.1'
+provider: The Coca-Cola Company
+providerId: coca-cola
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live HTTP probes of the retired Coca-Cola Enterprises developer program hosts
+  plus the first-party GitHub repositories that carry the only versioned API
+  documentation the company publishes.
+policy_published: false
+versioning_scheme: null
+deprecation_policy: null
+sunset_headers: false
+sla_published: false
+status_page: null
+notes: >-
+  The Coca-Cola Company publishes no API versioning policy, no deprecation
+  policy, no RFC 8594 Sunset/Deprecation header contract, no SLA and no status
+  page. This file records a lifecycle event we OBSERVED rather than one the
+  company documented, which is why no Lifecycle, Deprecation or StatusPage
+  pointer is wired into apis.yml. The historical Coca-Cola Enterprises developer
+  program is fully retired: both Mashery hosts still resolve in DNS but the
+  tenant is gone, so an integrator following any surviving link — including the
+  three links this record carried until today — reaches a Mashery error page
+  rather than a redirect or a notice. Nothing announced the retirement; it was
+  discovered by probe.
+retired:
+  - name: Coca-Cola Enterprises Product API
+    surface: http://developer.cokecce.com/docs/Product_API
+    state: retired
+    evidence:
+      - url: https://developer.cokecce.com/docs/Product_API
+        http_status: 404
+        body: 'Unrecognized domain developer.cokecce.com (Mashery)'
+        fetched: '2026-09-05'
+    note: >-
+      DNS still points developer.cokecce.com at cokecce.mashery.com, but the
+      Mashery tenant no longer exists and the TLS certificate does not cover the
+      hostname. No sunset notice, no redirect, no archive.
+  - name: Coca-Cola Enterprises Location API
+    surface: http://developer.cokecce.com/docs/Location
+    state: retired
+    evidence:
+      - url: https://developer.cokecce.com/docs/Location
+        http_status: 404
+        body: 'Unrecognized domain developer.cokecce.com (Mashery)'
+        fetched: '2026-09-05'
+  - name: Coca-Cola Enterprises API gateway
+    surface: http://api.cokecce.com/
+    state: retired
+    evidence:
+      - url: https://api.cokecce.com/
+        http_status: 596
+        body: '596 Service Not Found (Mashery)'
+        fetched: '2026-09-05'
+    note: >-
+      The runtime gateway behind the legacy program answers Mashery's 596
+      "Service Not Found" — the plan and package are deregistered, not merely
+      unauthenticated.
+  - name: Coca-Cola Enterprises developer portal (I/O Docs)
+    surface: http://developer.cokecce.com/io-docs
+    state: retired
+    evidence:
+      - url: https://developer.cokecce.com/io-docs
+        http_status: 404
+        fetched: '2026-09-05'
+    note: >-
+      Retired following the 2016 reorganization of Coca-Cola Enterprises into
+      Coca-Cola European Partners (now Coca-Cola Europacific Partners).
+versioned_surfaces:
+  - name: Soft Bottler Manager infrastructure template
+    version: 3.0.0
+    dated: '2025-08-05'
+    scheme: semver, stated in the repository README
+    source: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+    note: >-
+      The only versioned, dated API-adjacent document The Coca-Cola Company
+      publishes. It is an Azure ARM template plus deployment guide, not an API
+      contract, and it carries no deprecation or support commitment.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -4,46 +4,48 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: The Coca-Cola Company
 providerId: coca-cola
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-05'
+generated: '2026-09-05'
+method: searched
+reconciled: true
 tags:
   - Beverages
   - Consumer Goods
   - Distribution
   - Supply Chain
   - Retail
-notes: The Coca-Cola Company is a beverage manufacturer; its bottling, distribution, and retail integrations
-  run over EDI and bilateral B2B contracts rather than a public developer API. The company does not publish
-  a public commercial API price list. The single enterprise plan below preserves the API Commons Plans
-  structure without fabricating numbers.
-description: The Coca-Cola Company does not publicly document a developer API or price list. Bottler,
-  retail, and distribution integrations are negotiated bilaterally and run over EDI / B2B contracts.
+plan_count: 0
+plans: []
+description: >-
+  The Coca-Cola Company publishes no API plans, no API price list and no
+  "request API access" page — not even an enterprise contact-sales gate. There
+  is nothing to price because there is no public developer program: the legacy
+  Coca-Cola Enterprises program that once carried API terms of use is retired,
+  and the company's live API surfaces are internal MuleSoft services and a
+  partner-only Azure APIM hub for bottler agents, both governed by bilateral
+  contracts that are never published.
+notes: >-
+  Rewritten 2026-09-05, replacing a 2026-05-04 bulk-sweep placeholder that
+  invented a single "Enterprise Partner" plan with a "contact sales" price. No
+  such plan is published anywhere by the company; the placeholder was a
+  structural fill, not a finding. plan_count is 0 and that is the honest,
+  useful measurement.
 sources:
-  - https://www.coca-colacompany.com
-plans:
-  - id: coca-cola-enterprise
-    name: Enterprise Partner
-    type: enterprise
-    description: Custom-negotiated partner integration for bottlers, retailers, distributors, or supply-chain
-      partners. No public pricing.
-    entries:
-      - label: Partner Integration
-        name: partner_integration
-        type: subscription
-        metric: month
-        limit: -1
-        timeFrame: month
-        geo: global
-        unit: 1
-        price: contact sales
-        userMultiplied: false
-    elements:
-      - name: Custom partner integration
-      - name: Negotiated SLA
-      - name: EDI / B2B connectivity
+  - url: https://www.coca-colacompany.com/
+    http_status: 200
+    note: Corporate site — no developer, pricing or API-access section in navigation or footer.
+  - url: https://www.coca-colacompany.com/policies-and-practices
+    http_status: 200
+    note: Policies index — no API terms of use or API pricing.
+  - url: https://developer.cokecce.com/API_Terms_of_Use
+    http_status: 404
+    note: >-
+      Legacy Coca-Cola Enterprises API terms of use — the only API commercial
+      terms the company ever published. Mashery now answers "Unrecognized
+      domain".
+  - url: https://api.cokecce.com/
+    http_status: 596
+    note: Legacy gateway deregistered — Mashery "Service Not Found".
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -4,36 +4,49 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: The Coca-Cola Company
 providerId: coca-cola
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-05'
+generated: '2026-09-05'
+method: searched
+reconciled: true
 tags:
   - Beverages
   - Consumer Goods
   - Supply Chain
   - Rate Limiting
-notes: The Coca-Cola Company does not publish public API rate limits. Any partner integration limits would
-  be defined inside the bilateral contract.
-description: No public rate-limit documentation exists. Limits are governed by individual partner / EDI
-  agreements.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: null
+description: >-
+  The Coca-Cola Company documents no rate limits, no rate-limit response headers
+  and no 429 behaviour anywhere public. There is no developer reference to read
+  them from.
+notes: >-
+  Rewritten 2026-09-05, replacing a 2026-05-04 bulk-sweep placeholder that
+  asserted a 429/503 response-code contract and a "Retry-After with jitter"
+  backoff policy. Neither is documented by the company; both were generic
+  defaults written into the structure, and an agent reading them would have
+  believed Coca-Cola had published a throttling contract it has not. The only
+  throttling the company describes in public is the statement, in its own
+  bottler-agent repository, that rate limiting happens at the TCCC Azure API
+  Management hub — with no numbers, windows or headers attached. limit_count is
+  0 and that is the honest measurement.
+observed:
+  - surface: TCCC bottler agent hub (Azure API Management)
+    claim: >-
+      "External Request -> TCCC Hub (APIM) -> Bottler Agent ... Rate Limiting /
+      Authentication / Hub-Spoke Check" — rate limiting is stated as an APIM
+      hub responsibility with no published limit, window or header.
+    url: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+    http_status: 200
+    fetched: '2026-09-05'
 sources:
-  - https://www.coca-colacompany.com
-responseCodes:
-  throttled: 429
-  serviceUnavailable: 503
-limits:
-  - name: Partner-contract defined
-    scope: account
-    metric: varies
-    limit: see partner agreement
-    notes: Limits are negotiated as part of each partner integration agreement.
-policies:
-  - name: Backoff strategy
-    description: On 429 responses, honor any Retry-After header and back off with jitter before retrying.
-  - name: Bilateral contract
-    description: Specific limits, retry policy, and SLAs are governed by the partner integration contract.
+  - url: https://www.coca-colacompany.com/
+    http_status: 200
+    note: No developer or API reference section exists to carry limits.
+  - url: https://developer.cokecce.com/docs/Product_API
+    http_status: 404
+    note: Retired legacy reference — Mashery "Unrecognized domain".
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

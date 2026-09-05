@@ -1,0 +1,64 @@
+specification: API Commons MCP
+specificationVersion: '0.1'
+provider: The Coca-Cola Company
+providerId: coca-cola
+generated: '2026-09-05'
+method: searched
+status: documented-not-public
+source: >-
+  https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc — a
+  first-party, non-forked repository in The Coca-Cola Company's own verified
+  GitHub organization, whose README documents the TCCC multi-tenant hub-spoke
+  bottler agent architecture and names the MCP servers the deployment template
+  provisions.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: api-key
+  verified: searched
+notes: >-
+  The Coca-Cola Company operates MCP servers, but does not publish one an agent
+  can reach. The "Soft Bottler Manager" ARM template in TCCC's own GitHub
+  organization provisions three MCP servers — Cosmos DB, Blob Storage and
+  Service Bus — into each BOTTLER's own Azure subscription as a spoke of a
+  TCCC-operated Azure API Management hub. There is no hosted endpoint anyone can
+  POST to and no npx/pip package anyone can install: the servers only exist once
+  a bottler deploys the template into its own tenant, and all traffic is
+  required to flow through the TCCC hub's APIM gateway behind an
+  Ocp-Apim-Subscription-Key issued by TCCC. mode is therefore `none` — nobody
+  ships a server a third party can call — and no MCPServer pointer is wired into
+  apis.yml, because that pointer would assert a reachable agent surface that
+  does not exist. No tool list is recorded: the repository names the servers but
+  publishes no tools/list output, and inventing one would fabricate the very
+  thing this file exists to measure.
+evidence:
+  - claim: MCP servers are provisioned by the bottler deployment template
+    quote: >-
+      "The infrastructure supports multiple MCP servers, all enabled by default:
+      Cosmos DB MCP ... Blob Storage MCP ... Service Bus MCP"
+    url: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+    http_status: 200
+    fetched: '2026-09-05'
+  - claim: MCP support is a stated feature of the deployed infrastructure
+    quote: '"MCP Support - Model Context Protocol enabled for AI agent communication"'
+    url: https://raw.githubusercontent.com/The-Coca-Cola-Company/bottler-soft-infra-poc/main/README.md
+    http_status: 200
+    fetched: '2026-09-05'
+  - claim: all agent traffic is gated behind the TCCC APIM hub, not a public endpoint
+    quote: >-
+      "APIM Gateway URL: https://tccc-soft-prod-apim-{uniqueid}.azure-api.net" /
+      "All communication flows through the TCCC Hub (no direct spoke-to-spoke
+      communication)"
+    url: https://raw.githubusercontent.com/The-Coca-Cola-Company/bottler-soft-infra-poc/main/README.md
+    http_status: 200
+    fetched: '2026-09-05'
+agent_stack_declared:
+  - Model Context Protocol (Cosmos DB, Blob Storage, Service Bus servers)
+  - Semantic Kernel (plugins and memory)
+  - AutoGen (agent-to-agent orchestration)
+  - Azure AI Foundry (model router deployment)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

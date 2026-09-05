@@ -1,0 +1,117 @@
+specification: API Commons Well-Known
+specificationVersion: '0.1'
+provider: The Coca-Cola Company
+providerId: coca-cola
+generated: '2026-09-05'
+method: probed
+source: >-
+  Direct HTTPS probes of /.well-known/ paths on every host this record knows —
+  the registrable domain and www, the consumer brand host, the data-trust and
+  investor hosts, and the two retired Mashery hosts from the legacy Coca-Cola
+  Enterprises developer program.
+notes: >-
+  No /.well-known/ document is served on any Coca-Cola host. Every corporate and
+  brand host answers /.well-known/* with the site 404 page. developer.cokecce.com
+  is still in DNS pointing at Mashery but the tenant is gone — Mashery returns
+  "Unrecognized domain" and 403 on /.well-known/ paths — and api.cokecce.com
+  returns Mashery's 596 "Service Not Found". No WellKnown or SecurityTxt pointer
+  is wired into apis.yml, because this file records an absence, not a presence.
+hosts:
+- host: www.coca-colacompany.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: coca-colacompany.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: www.coca-cola.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: datatrust.coca-cola.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: investors.coca-colacompany.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+- host: developer.cokecce.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+- host: api.cokecce.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 596
+  - path: /.well-known/openid-configuration
+    status: 596
+  - path: /.well-known/oauth-authorization-server
+    status: 596
+  - path: /.well-known/oauth-protected-resource
+    status: 596
+  - path: /.well-known/api-catalog
+    status: 596
+  - path: /.well-known/ai-plugin.json
+    status: 596

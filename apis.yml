@@ -36,7 +36,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/coca-cola.
 access: 3rd-Party
 kind: company
 created: '2026-03-21'
-modified: '2026-04-26'
+modified: '2026-09-05'
 position: Consuming
 description: >-
   The Coca-Cola Company is the world's largest non-alcoholic beverage company,
@@ -58,12 +58,20 @@ apis:
       - Enterprise Integration
       - Microservices
       - MuleSoft
-    humanURL: https://www.mulesoft.com/webinars/api/evaluation-to-implementation-coca-cola-company-journey
+    humanURL: https://web.archive.org/web/20260310100413/https://www.mulesoft.com/webinars/api/how-coca-cola-accelerates
     properties:
-      - url: https://www.mulesoft.com/webinars/api/how-coca-cola-accelerates
+      - url: https://web.archive.org/web/20260310100413/https://www.mulesoft.com/webinars/api/how-coca-cola-accelerates
         type: CaseStudy
-      - url: https://www.mulesoft.com/webinars/api/evaluation-to-implementation-coca-cola-company-journey
-        type: CaseStudy
+    x-pointer-note: >-
+      Repointed 2026-09-05. Both MuleSoft webinar URLs this entry used to carry
+      (/webinars/api/evaluation-to-implementation-coca-cola-company-journey and
+      /webinars/api/how-coca-cola-accelerates) still return HTTP 200, but the
+      pages MuleSoft now serves at those slugs are a generic "From Digital to
+      Agentic Transformation" webinar with zero mentions of Coca-Cola — a
+      soft-404, not a live citation. MuleSoft has scrubbed Coca-Cola from
+      mulesoft.com entirely: /case-studies lists no Coca-Cola story and
+      /case-studies/api/coca-cola is a hard 404. The Wayback snapshot of
+      2026-03-10 is the only live URL that still carries the original content.
     description: >-
       Internal API platform built on MuleSoft Anypoint that exposes reusable
       experience, process, and system APIs across The Coca-Cola Company's
@@ -82,60 +90,48 @@ apis:
       - Retail and route-to-market data exchange
       - Consumer engagement (Freestyle, loyalty)
       - Supply-chain visibility and demand planning
-  - aid: coca-cola:coca-cola-enterprises-product-api-legacy
-    name: Coca-Cola Enterprises Product API (Legacy)
+  - aid: coca-cola:tccc-soft-bottler-agent-hub
+    name: TCCC Soft Bottler Agent Hub
     tags:
-      - Catalog
-      - Legacy
-      - Product
-    tags_raw:
-      - Catalog
-      - Legacy
-      - Products
-    humanURL: http://developer.cokecce.com/docs/Product_API
+      - Agents
+      - API Management
+      - Bottling
+      - Multi-Tenant
+    humanURL: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+    baseURL: https://tccc-soft-prod-apim-{uniqueid}.azure-api.net
     properties:
-      - url: http://developer.cokecce.com/io-docs
-        type: Documentation
-      - url: http://developer.cokecce.com/docs/Product_API
-        type: Documentation
-      - url: http://developer.cokecce.com/API_Terms_of_Use
-        type: TermsOfService
-    description: >-
-      Historical Coca-Cola Enterprises (CCE) Product API that exposed product
-      catalog metadata and was published through an I/O Docs portal at
-      developer.cokecce.com. Following the 2016 reorganization that created
-      Coca-Cola European Partners (now Coca-Cola Europacific Partners), the
-      CCE developer portal is no longer maintained as a public developer
-      program. Documented here for archival reference only.
-    x-features:
-      - Product catalog lookup
-      - I/O Docs interactive documentation
-      - API key authentication
-    x-use-cases:
-      - Retail merchandising integrations (historical)
-      - Product information sharing with partners (historical)
-  - aid: coca-cola:coca-cola-enterprises-location-api-legacy
-    name: Coca-Cola Enterprises Location API (Legacy)
-    tags:
-      - Geolocation
-      - Legacy
-      - Locations
-    humanURL: http://developer.cokecce.com/docs/Location
-    properties:
-      - url: http://developer.cokecce.com/docs/Location
+      - url: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+        type: SourceCode
+      - url: https://raw.githubusercontent.com/The-Coca-Cola-Company/bottler-soft-infra-poc/main/README.md
         type: Documentation
     description: >-
-      Historical Coca-Cola Enterprises (CCE) Location API that exposed
-      Coca-Cola product availability and bottler/distribution location data.
-      No longer maintained as a public developer program after the
-      reorganization into Coca-Cola European Partners. Documented here for
-      archival reference only.
+      Partner-facing Azure API Management hub through which The Coca-Cola
+      Company's bottlers register and operate AI agents. Documented publicly in
+      TCCC's own GitHub organization as part of the "Soft Bottler Manager"
+      deployment template: a bottler deploys a spoke (Azure Function App,
+      Cosmos DB, Service Bus, Event Grid, ML workspace) into its own Azure
+      tenant, then registers it with the TCCC hub via POST /api/agents/register
+      using an Ocp-Apim-Subscription-Key issued by TCCC. The hub performs
+      authentication, rate limiting and hub-spoke enforcement; no direct
+      spoke-to-spoke traffic is permitted. The base URL is templated per
+      deployment and the surface is partner-gated — it is not callable by a
+      third party and publishes no OpenAPI.
     x-features:
-      - Location and territory lookup
-      - Bottler/distributor metadata
+      - Agent registration (POST /api/agents/register)
+      - Spoke health check (GET /api/health, x-functions-key)
+      - Hub-spoke isolation, one Azure tenant per bottler
+      - MCP servers (Cosmos DB, Blob Storage, Service Bus) provisioned per spoke
+      - Semantic Kernel plugins and AutoGen agent-to-agent orchestration
+      - Azure AI Foundry model router
     x-use-cases:
-      - Field merchandising apps (historical)
-      - Distribution territory visualization (historical)
+      - Bottler financial analysis agents
+      - Excel and document processing for bottler operations
+      - Cross-tenant agent onboarding for the Coca-Cola bottling system
+    x-access: partner-gated
+    x-evidence:
+      fetched: '2026-09-05'
+      url: https://github.com/The-Coca-Cola-Company/bottler-soft-infra-poc
+      http_status: 200
 common:
   - type: DomainSecurity
     url: security/coca-cola-domain-security.yml
@@ -147,8 +143,6 @@ common:
     url: https://www.coca-colacompany.com/
   - type: Brands
     url: https://www.coca-colacompany.com/brands
-  - type: Innovation
-    url: https://www.coca-colacompany.com/innovation
   - type: Investors
     url: https://investors.coca-colacompany.com/
   - type: Press
@@ -157,12 +151,16 @@ common:
     url: https://www.coca-colacompany.com/sustainability
   - type: Careers
     url: https://www.coca-colacompany.com/careers
+  - type: Support
+    url: https://www.coca-colacompany.com/about-us/contact-us
+  - type: SourceCode
+    url: https://github.com/C0k3
+  - type: LLMsTxt
+    url: llms/coca-cola-llms.txt
   - type: PrivacyPolicy
-    url: https://www.coca-colacompany.com/policies-and-practices/privacy-policy
+    url: https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice
   - type: TermsOfService
-    url: https://www.coca-colacompany.com/policies-and-practices/terms-of-use
-  - type: Integrations
-    url: https://www.coca-colacompany.com/apps
+    url: https://www.coca-cola.com/us/en/legal/terms-of-service
 integrations:
   - name: The Coca-Cola Company
   - name: Brands
@@ -173,3 +171,29 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 specificationVersion: '0.23'
+x-enrichment:
+  date: '2026-09-05'
+  status: minimal
+  artifacts_added: 5
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    The only public developer program Coca-Cola ever ran, developer.cokecce.com,
+    is a dead Mashery tenant that now answers "Unrecognized domain" while its
+    gateway api.cokecce.com returns 596 "Service Not Found"; the company's two
+    live API surfaces — an internal MuleSoft platform and a partner-gated Azure
+    APIM hub for bottler agents documented in its own GitHub org — publish no
+    contract, no reference and no key request path for anyone outside the
+    bottling system.
+  evidence:
+    - url: https://developer.cokecce.com/docs/Product_API
+      status: 404
+    - url: https://api.cokecce.com/
+      status: 596
+    - url: https://www.coca-colacompany.com/.well-known/api-catalog
+      status: 404
+    - url: https://www.coca-colacompany.com/
+      status: 200
+  checked: '2026-09-05'

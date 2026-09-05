@@ -1,0 +1,45 @@
+specification: API Commons Packages
+specificationVersion: '0.1'
+provider: The Coca-Cola Company
+providerId: coca-cola
+generated: '2026-09-05'
+method: searched
+source: >-
+  Searched npm (registry.npmjs.org/-/v1/search for "coca-cola", "cokecce",
+  "tccc"), PyPI (pypi.org/pypi/<name>/json), RubyGems search, crates.io search
+  and the NuGet query service, plus both first-party GitHub organizations
+  (github.com/The-Coca-Cola-Company, 53 public repos; github.com/C0k3, 3 public
+  repos) for a published client library.
+package_count: 0
+packages: []
+notes: >-
+  The Coca-Cola Company publishes no first-party SDK or client library on any
+  public package registry. The npm hits for "coca-cola" are unrelated
+  third-party packages (an empty 0.0.0 placeholder, a Brazilian agency build
+  tool), the "tccc" hits are all Tencent Cloud Contact Center, and PyPI,
+  RubyGems, crates.io and NuGet return nothing attributable to the company.
+  Neither GitHub organization ships a package manifest intended for
+  distribution: The-Coca-Cola-Company is 48 GitHub Learning Lab forks plus five
+  first-party repos (an Azure ARM template, an Azure Functions integration, a
+  Power BI backup, and two experiments), and C0k3 holds a 2016-era serverless
+  example, a Go.cd setup guide and a code-standards README. No SDKs pointer is
+  wired into apis.yml because there is no SDK to point at.
+searched_registries:
+  - registry: npm
+    query: coca-cola, cokecce, tccc
+    result: no first-party package
+  - registry: pypi
+    query: coca-cola, cokecce
+    result: 404 on both
+  - registry: rubygems
+    query: coca-cola
+    result: empty result set
+  - registry: crates.io
+    query: coca-cola
+    result: no first-party package
+  - registry: nuget
+    query: coca-cola
+    result: 1 unrelated hit (RageMPCSharpPluginAPI)
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
