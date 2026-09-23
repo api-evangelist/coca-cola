@@ -1,7 +1,9 @@
 ---
 title: AI Images, Class Fourteen Have a Coke and a Smile
 url: https://www.cyberneticforests.com/ai-images-14
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola" press release artificial intelligence'
 position: 3
 source: serpapi-google

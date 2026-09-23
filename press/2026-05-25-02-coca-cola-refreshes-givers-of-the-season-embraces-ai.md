@@ -1,7 +1,9 @@
 ---
 title: Coca-Cola Refreshes Givers of the Season, Embraces AI- ...
 url: https://www.coca-colacompany.com/media-center/coca-cola-refreshes-givers-of-the-season-embraces-ai-powered-storytelling-in-global-holiday-campaign
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola" press release artificial intelligence'
 position: 2
 source: serpapi-google

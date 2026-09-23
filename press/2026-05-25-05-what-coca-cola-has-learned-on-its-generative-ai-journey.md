@@ -1,7 +1,9 @@
 ---
 title: What Coca-Cola has learned on its generative AI journey ...
 url: https://www.marketingdive.com/news/what-coca-cola-learned-generative-ai/741709/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola" press release artificial intelligence'
 position: 5
 source: serpapi-google

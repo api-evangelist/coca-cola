@@ -1,7 +1,9 @@
 ---
 title: Coke Names Innovation Leader
 url: https://cokeflorida.com/press-releases/coke-florida-names-transformation-and-innovation-leader/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola Enterprises" press release artificial intelligence'
 position: 1
 source: serpapi-google

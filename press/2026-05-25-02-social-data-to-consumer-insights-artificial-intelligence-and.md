@@ -1,7 +1,9 @@
 ---
 title: 'Social Data to Consumer Insights: Artificial Intelligence and ...'
 url: https://jg056.medium.com/social-data-to-consumer-insights-artificial-intelligence-and-coca-cola-dd2db325cbb9
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola Enterprises" press release artificial intelligence'
 position: 2
 source: serpapi-google

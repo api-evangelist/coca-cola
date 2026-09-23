@@ -1,7 +1,9 @@
 ---
 title: Coca-Cola® Creations Imagines Year 3000 With New ...
 url: https://www.coca-colacompany.com/media-center/coca-cola-creations-imagines-year-3000-futuristic-flavor-ai-powered-experience
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola" press release artificial intelligence'
 position: 4
 source: serpapi-google

@@ -1,7 +1,9 @@
 ---
 title: How Coca-Cola, Hershey and United are using AI and data ...
 url: https://www.instagram.com/p/DXz8IZBmWsO/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Coca-Cola Enterprises" press release artificial intelligence'
 position: 3
 source: serpapi-google
