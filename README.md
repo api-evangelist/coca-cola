@@ -1,4 +1,4 @@
-# The Coca-Cola Company (coca-cola)
+# The Coca-Cola Company
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,84 +66,104 @@
 
 The Coca-Cola Company is the world's largest non-alcoholic beverage company, owning and marketing more than 200 brands across sparkling soft drinks, water, hydration, sports, coffee, tea, juice, dairy, and plant-based drinks. The company sells its products in more than 200 countries through a bottling and distribution partner network. While Coca-Cola does not currently publish a broadly available public REST API, it is a heavy enterprise API consumer running an internal API program on MuleSoft that connects ERP, manufacturing, distribution, retail, marketing, and consumer engagement systems through a Center for Enablement (C4E) model. Historical Coca-Cola Enterprises (CCE) Product and Location APIs at developer.cokecce.com are no longer maintained as a public-facing developer program.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/coca-cola/refs/heads/main/apis.yml)
+**Areas:** Beverages · Beverage Manufacturer · Consumer Goods · Distribution · Retail · Supply Chain · Food and Beverage · Consumer Packaged Goods
 
-## Scope
+## The Coca-Cola Company on APIs.io
 
-- **Type:** Index
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for The Coca-Cola Company is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/coca-cola/](https://apis.io/providers/coca-cola/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Beverages
-- Beverage Manufacturer
-- Consumer Goods
-- Distribution
-- Retail
-- Supply Chain
+- [Coca-Cola Internal API Platform](https://apis.io/apis/coca-cola/coca-cola-internal-api-platform/) — Internal API platform built on MuleSoft Anypoint that exposes reusable experience, process, and system APIs across The Coca-Cola Company's bottling,…
+- [TCCC Soft Bottler Agent Hub](https://apis.io/apis/coca-cola/tccc-soft-bottler-agent-hub/) — Partner-facing Azure API Management hub through which The Coca-Cola Company's bottlers register and operate AI agents. Documented publicly in TCCC's own…
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-26
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (1)
 
-### Coca-Cola Internal API Platform
-Internal API platform built on MuleSoft Anypoint that exposes reusable experience, process, and system APIs across The Coca-Cola Company's bottling, marketing, ecommerce, and supply-chain operations.
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Tags
+- [Coca Cola Domain Security](https://apis.io/security/coca-cola/coca-cola-domain-security/)
 
-- API Management, Enterprise Integration, Microservices, MuleSoft
+#### Plans and pricing (1)
 
-#### Properties
+Published plans, tiers and prices.
 
-- [Case Study](https://www.mulesoft.com/webinars/api/how-coca-cola-accelerates)
-- [Case Study](https://www.mulesoft.com/webinars/api/evaluation-to-implementation-coca-cola-company-journey)
+- [Coca Cola Plans Pricing](https://apis.io/plans/coca-cola/coca-cola-plans-pricing/)
 
-### Coca-Cola Enterprises Product API (Legacy)
-Historical Coca-Cola Enterprises Product API published through an I/O Docs portal at developer.cokecce.com. No longer maintained as a public developer program after the reorganization into Coca-Cola European Partners.
+#### Rate limits (1)
 
-#### Tags
+Published request limits.
 
-- Catalog, Legacy, Products
+- [Coca Cola Rate Limits](https://apis.io/rate-limits/coca-cola/coca-cola-rate-limits/)
 
-#### Properties
+#### FinOps (1)
 
-- [Documentation](http://developer.cokecce.com/io-docs)
-- [Documentation](http://developer.cokecce.com/docs/Product_API)
-- [Terms of Service](http://developer.cokecce.com/API_Terms_of_Use)
+What the API costs to run, by operation.
 
-### Coca-Cola Enterprises Location API (Legacy)
-Historical CCE Location API that exposed Coca-Cola product availability and bottler/distribution location data. No longer maintained as a public developer program.
+- [Coca Cola Finops](https://apis.io/finops/coca-cola/coca-cola-finops/)
 
-#### Tags
+## Where to find this API
 
-- Geolocation, Legacy, Locations
-
-#### Properties
-
-- [Documentation](http://developer.cokecce.com/docs/Location)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.coca-colacompany.com/)
-- [Brands](https://www.coca-colacompany.com/brands)
-- [Innovation](https://www.coca-colacompany.com/innovation)
-- [Investors](https://investors.coca-colacompany.com/)
-- [Press](https://www.coca-colacompany.com/media-center)
-- [Sustainability](https://www.coca-colacompany.com/sustainability)
-- [Careers](https://www.coca-colacompany.com/careers)
-- [Privacy Policy](https://www.coca-colacompany.com/policies-and-practices/privacy-policy)
-- [Terms of Service](https://www.coca-colacompany.com/policies-and-practices/terms-of-use)
+- [Support](https://www.coca-colacompany.com/about-us/contact-us)
+- [Terms of service](https://www.coca-cola.com/us/en/legal/terms-of-service)
+- [Privacy policy](https://datatrust.coca-cola.com/us/en/notices/global-consumer-privacy-notice)
+- [GitHub](https://github.com/The-Coca-Cola-Company)
 
-## Notes
+## API Evangelist rating
 
-No public OpenAPI specifications, JSON-LD vocabularies, Spectral rulesets, or Naftiko capabilities are published for Coca-Cola because no broadly available public Coca-Cola REST API exists today. This profile documents the company's API posture and historical developer programs only.
+**Kin Score 13.0** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 58.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 14.3 |
+| Access clarity | 21.1 |
 
-**FN:** Kin Lane
+**Agent readiness 2.5** — human-only
 
-**Email:** kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/coca-cola/](https://apis.io/providers/coca-cola/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for The Coca-Cola Company: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/coca-cola/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
